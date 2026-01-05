@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markdown Previewer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+   
+  </head>
+  <body>
+    <h2>Markdown Previewer</h2>
+
+<div class="container">
+<textarea id="input">
+# Live Markdown Previewer
+
+## Student Details
+**Course:** Full Stack Development  
+**Platform:** Gooru Learning  
+**Project Category:** Mini Project  
+
+---
+
+## Introduction
+The **Live Markdown Previewer** is a web-based application developed using  
+**HTML, CSS, and JavaScript**.  
+It helps users write content in **Markdown syntax** and view the formatted
+output instantly.
+
+---
+
+## Objectives
+- Learn Markdown syntax
+- Understand real-time DOM updates
+- Use external JavaScript libraries
+- Improve frontend development skills
+
+---
+
+## Key Features
+- Real-time Markdown rendering
+- Supports headings, lists, bold, italic, and code blocks
+- User-friendly interface
+- Lightweight and fast
+
+---
+
+## Tools & Technologies
+- HTML for structure
+- CSS for styling
+- JavaScript for functionality
+- marked.js for Markdown to HTML conversion
+
+---
+
+## Working Principle
+1. User enters Markdown text in the input area
+2. JavaScript listens for input changes
+3. marked.js converts Markdown into HTML
+4. The preview section updates instantly
+
+---
+
+## Conclusion
+This project demonstrates the practical use of JavaScript libraries
+to create interactive web applications and improves understanding
+of frontend development concepts.
+
+    </textarea>
+
+      <div id="preview"></div>
+    </div>
+
+    <script>
+      const input = document.getElementById('input');
+      const preview = document.getElementById('preview');
+
+      function updatePreview() {
+        preview.innerHTML = marked.parse(input.value);
+      }
+
+      input.addEventListener('input', updatePreview);
+      updatePreview();
+   function showMsg() {
+  console.log("Welcome! Start typing Markdown to see the live preview.");
+}
+
+showMsg();
+    </script>
+  </body>
+</html>
